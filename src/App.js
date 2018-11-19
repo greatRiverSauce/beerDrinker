@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import BeerPage from "./client/BeerPage";
+import DrinkerPage from "./client/DrinkerPage";
+import BarPage from "./client/BarPage";
+import ManufacturerPage from "./client/ManufacturerPage";
+import SQLInterface from "./client/SQLInterface";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import BartenderPage from "./client/BartenderPage";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+        <Router>
+            <div className="App">
+                <Route exact path="/" component={SQLInterface} />
+                <Route path="/beer/:beerName" component={BeerPage} />
+                <Route path="/drinker/:drinkerName" component={DrinkerPage} />
+                <Route path="/bar/:barName" component={BarPage} />
+                <Route path="/manufacturer/:manufacturerName" component={ManufacturerPage} />
+                {/*<Route path="/bar/:bartenderName" component={BartenderPage} />*/}
+            </div>
+        </Router>
+
+
     );
   }
 }
