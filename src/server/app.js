@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
     database : 'BarBeerDrinkerPlus'
 });
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
