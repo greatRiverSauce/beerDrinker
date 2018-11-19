@@ -18,7 +18,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 app.listen(port, function() {
-    console.log('Server running @localhost:80');
+    console.log('Server running @localhost:3000');
 })
 app.use(cors());
 

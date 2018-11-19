@@ -6,7 +6,7 @@ export const setData = data => ({
 
 export function getData(sql) {
     return (dispatch) => {
-        fetch(`http://localhost:80/data/${sql}`)
+        fetch(`http://localhost:3000/data/${sql}`)
             .then(res => res.json())
             .then(data => {
                 dispatch(setData(data));
