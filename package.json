@@ -49,5 +49,6 @@
   "homepage": "https://github.com/greatRiverSauce/beerDrinker#readme",
   "engines": {
     "node": "10.13.0"
-  }
+  },
+  "proxy": "http://localhost:5000/"
 }
